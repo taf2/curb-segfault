@@ -1,13 +1,21 @@
+PATH
+  remote: /Users/taf2/work/curb
+  specs:
+    curb (0.9.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
-    curb (0.9.6)
+    ffi (1.9.25)
+    jemal (0.1.1)
+      ffi (~> 1.9.10)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  curb
+  curb!
+  jemal
 
 BUNDLED WITH
-   1.16.2
+   1.17.1

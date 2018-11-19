@@ -54,22 +54,22 @@ end
 
 5000.times do
 
+    easy = create_easy
 begin
   Timeout.timeout(RUBY_TIMEOUT) do
-    Curl.get(TARGET_URL) do|easy|
-      easy.timeout = 2
-      easy.proxy_url = PROXY_URL
-      easy.proxy_type = 0
-      easy.on_debug { |a, b| } #puts a, b }
-    end
-#    easy = create_easy
-#    easy.perform
+#   Curl.get(TARGET_URL) do|easy|
+#     easy.timeout = 2
+#     easy.proxy_url = PROXY_URL
+#     easy.proxy_type = 0
+#     easy.on_debug { |a, b| } #puts a, b }
+#   end
+    easy.perform
   end
 rescue Timeout::Error => e
   puts e.inspect
 ensure
   puts "close"
-  #easy.close
+  easy.close
 end
 
 puts "start gc"
